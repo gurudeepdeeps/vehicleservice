@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <style type="text/css">
+    .bs-example {
+      margin: 0px;
+
+    }
+    .bg-dark {
+      background: linear-gradient(90deg, #4f46e5, #6366f1) !important;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.25);
+      backdrop-filter: blur(6px);
+    }
+    .navbar {
+      padding: 0.6rem 1.2rem;
+    }
+    .navbar-brand {
+      font-size: 20px;
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    .navbar-nav .nav-link {
+      color: #f1f5f9 !important;
+      font-weight: 600;
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      transition: all 0.2s ease-in-out;
+      margin: 0 2px;
+    }
+    .navbar-nav .nav-link:hover {
+      background: rgba(255, 255, 255, 0.18);
+      transform: translateY(-1px);
+    }
+    .navbar-nav .nav-link.active {
+      background: rgba(255, 255, 255, 0.28);
+    }
+    .navbar-toggler {
+      border: none;
+      outline: none;
+    }
+    .navbar-toggler:focus {
+      box-shadow: none;
+    }
+  </style>
+</head>
+
+<body>
+
+
+
+  <div class="bs-example">
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+      <a href="/" class="navbar-brand" style="color:yellow;">Vehicle Service Management</a>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+        <div class="navbar-nav">
+          <a href="/" class="nav-item nav-link {% if request.path == '/' %}active{% endif %}">Home</a>
+
+          <a href="/customerclick" class="nav-item nav-link {% if request.path == '/customerclick' or request.path|slice:':10' == '/customer' %}active{% endif %}">Customer</a>
+          <a href="/mechanicsclick" class="nav-item nav-link {% if request.path == '/mechanicsclick' or request.path|slice:':9' == '/mechanic' %}active{% endif %}">Mechanics</a>
+          <a href="/adminclick" class="nav-item nav-link {% if request.path == '/adminclick' or request.path == '/adminlogin' or request.path|slice:':6' == '/admin' %}active{% endif %}">Admin</a>
+
+
+        </div>
+
+        <div class="navbar-nav">
+          <a href="/aboutus" class="nav-item nav-link {% if request.path == '/aboutus' %}active{% endif %}">About Us</a>
+          <a href="/contactus" class="nav-item nav-link {% if request.path == '/contactus' %}active{% endif %}">Contact Us</a>
+        </div>
+
+
+
+
+      </div>
+    </nav>
+  </div>
+
+
+</body>
+
+</html>

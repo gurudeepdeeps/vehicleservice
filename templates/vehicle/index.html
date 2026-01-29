@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <style media="screen">
+    :root {
+      --primary: #4f46e5;
+      --primary-dark: #4338ca;
+      --accent: #22c55e;
+      --dark: #0f172a;
+      --light: #f8fafc;
+      --muted: #64748b;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--light);
+      color: var(--dark);
+    }
+
+    .hero {
+      position: relative;
+      background: linear-gradient(120deg, rgba(15, 23, 42, 0.9), rgba(79, 70, 229, 0.85)),
+                  url('{% static "images/bg4.png" %}') center/cover no-repeat;
+      padding: 120px 20px 90px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .hero h1 {
+      font-size: 44px;
+      margin: 0 0 12px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 0 auto 24px;
+      font-size: 18px;
+      color: #e2e8f0;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s ease-in-out;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.2);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #0b3d1a;
+    }
+
+    .btn-primary:hover {
+      background: #16a34a;
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      border: 2px solid #ffffff;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.22);
+      transform: translateY(-1px);
+    }
+
+    .section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .section-title h2 {
+      font-size: 30px;
+      margin-bottom: 6px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+      border: 1px solid #e2e8f0;
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.12);
+    }
+
+    .card h3 {
+      margin: 12px 0 8px;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .logo-strip {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 0 10px;
+    }
+
+    .logo-strip img {
+      height: 50px;
+      opacity: 0.9;
+      filter: grayscale(20%);
+    }
+
+    .cta-banner {
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      color: #fff;
+      border-radius: 18px;
+      padding: 28px;
+      text-align: center;
+    }
+
+    .cta-banner p {
+      color: #cbd5f5;
+      margin: 8px 0 16px;
+    }
+
+    .cta-banner .btn-outline {
+      border: 2px solid #ffffff;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    .cta-banner .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.28);
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 34px; }
+      .hero p { font-size: 16px; }
+    }
+  </style>
+
+</head>
+
+<body>
+  {% include "vehicle/navbar.html" %}
+  <section class="hero">
+    <h1>Premium Vehicle Service, Simplified</h1>
+    <p>Book services, track repairs, and manage your vehicle history in one place. Fast approvals, transparent costs, and trusted mechanics.</p>
+    <div class="hero-cta">
+      <a href="/customerclick" class="btn btn-primary">Customer Portal</a>
+      <a href="/mechanicsclick" class="btn btn-outline">Mechanic Portal</a>
+      <a href="/adminclick" class="btn btn-outline">Admin Access</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title">
+      <h2>Why Choose Us</h2>
+      <p>Smart tools to keep your vehicle service organized, secure, and hassle-free.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Real-time Updates</h3>
+        <p>Track every request from approval to completion with status updates.</p>
+      </div>
+      <div class="card">
+        <h3>Verified Mechanics</h3>
+        <p>Approved professionals ensure quality repairs and reliable service.</p>
+      </div>
+      <div class="card">
+        <h3>Transparent Billing</h3>
+        <p>Clear cost breakdowns and invoices that keep you in control.</p>
+      </div>
+      <div class="card">
+        <h3>Secure Profiles</h3>
+        <p>Keep your vehicle details and service history organized and safe.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="section-title">
+      <h2>Brands We Support</h2>
+      <p>Trusted across leading two-wheelers, three-wheelers, and four-wheelers.</p>
+    </div>
+    <div class="logo-strip">
+      <img src="{% static "images/ferrari.png" %}" alt="Ferrari" />
+      <img src="{% static "images/ford.png" %}" alt="Ford" />
+      <img src="{% static "images/lambo.png" %}" alt="Lamborghini" />
+      <img src="{% static "images/mahindra.png" %}" alt="Mahindra" />
+      <img src="{% static "images/tvs.png" %}" alt="TVS" />
+      <img src="{% static "images/tata.png" %}" alt="Tata" />
+      <img src="{% static "images/hero.png" %}" alt="Hero" />
+      <img src="{% static "images/rolls.png" %}" alt="Rolls Royce" />
+      <img src="{% static "images/suzuki.png" %}" alt="Suzuki" />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="cta-banner">
+      <h2>Ready to get started?</h2>
+      <p>Create your account and manage services with a modern, intuitive dashboard.</p>
+      <div class="hero-cta">
+        <a href="/customersignup" class="btn btn-primary">Create Customer Account</a>
+        <a href="/mechanicsignup" class="btn btn-outline">Join as Mechanic</a>
+      </div>
+    </div>
+  </section>
+
+  {% include "vehicle/footer.html" %}
+</body>
+
+</html>
